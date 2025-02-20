@@ -26,27 +26,60 @@
                 </div>  
         </div>
 
-        <nav class="fade-in">
+        <nav id="navbar">
             <div class="logo">
                 <a href="index.html"><img src="img/logo.jpg" alt="Żłobek Elefante"></a>
-            </div>
+              </div>
+            <!-- Przycisk hamburgera widoczny na małych ekranach -->
+             <div class="ham">
+            <button id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+              <span class="hamburger-icon"></span>
+            </button>
+        </div>
+            <!-- Klasyczne menu dla większych ekranów -->
             <ul class="menu">
-                <li class="dropdown-container">
-                    <a href="#">ŻŁOBEK ▼</a>
-                    <ul class="dropdown">
-                        <li><a href="adaptacja.html">Adaptacja</a></li>
-                        <li><a href="plan_dnia.html">Plan dnia</a></li>
-                        <li><a href="kadra.html">Kadra</a></li>
-                        <li><a href="rekrutacja.html">Rekrutacja</a></li>
-                    </ul>
-                </li>
-                <li><a href="oferta.html">OFERTA</a></li>
-                <li><a href="galeria.html">GALERIA</a></li>
-                <li><a href="kontakt.html">KONTAKT</a></li>
+              <li class="dropdown-container">
+                <a href="#">ŻŁOBEK ▼</a>
+                <ul class="dropdown">
+                  <li><a href="podstrony_html/adaptacja.html">Adaptacja</a></li>
+                  <li><a href="plan_dnia.html">Plan dnia</a></li>
+                  <li><a href="kadra.html">Kadra</a></li>
+                  <li><a href="rekrutacja.html">Rekrutacja</a></li>
+                </ul>
+              </li>
+              <li><a href="oferta.html">OFERTA</a></li>
+              <li><a href="galeria.html">GALERIA</a></li>
+              <li><a href="kontakt.html">KONTAKT</a></li>
             </ul>
+          </nav>
+        </header>
 
-        </nav>
-    </header>
+
+<!-- Overlay dla mobilnego menu -->
+<div id="mobileMenu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="dropdown-container">
+        <div class="dropdown-header">
+          <a href="#">ŻŁOBEK</a>
+          <span class="dropdown-toggle">▼</span>
+        </div>
+        <ul class="dropdown">
+          <li><a href="/podstrony_html/adaptacja.html">Adaptacja</a></li>
+          <li><a href="plan_dnia.html">Plan dnia</a></li>
+          <li><a href="kadra.html">Kadra</a></li>
+          <li><a href="rekrutacja.html">Rekrutacja</a></li>
+        </ul>
+      </li>
+      <li><a href="oferta.html">OFERTA</a></li>
+      <li><a href="galeria.html">GALERIA</a></li>
+      <li><a href="kontakt.html">KONTAKT</a></li>
+    </ul>
+  </div>
+
+
+
+
+
     <div class="line"></div>
     <div class="cut-up"></div>
 
@@ -113,7 +146,7 @@
         </section>
     </main>
     
-    <footer class="footer fade-in">
+    <footer class="footer">
 
         <div class="first_row">
             <div class="logo"><img src="img/logo.jpg" alt="logo"></div>
@@ -148,17 +181,59 @@
     </footer>
     
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const dropdownContainers = document.querySelectorAll(".dropdown-container");
-            dropdownContainers.forEach(container => {
-                container.addEventListener("mouseenter", () => {
-                    container.querySelector(".dropdown").style.display = "block";
-                });
-                container.addEventListener("mouseleave", () => {
-                    container.querySelector(".dropdown").style.display = "none";
-                });
-            });
-        });
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     const dropdownContainers = document.querySelectorAll(".dropdown-container");
+        //     dropdownContainers.forEach(container => {
+        //         container.addEventListener("mouseenter", () => {
+        //             container.querySelector(".dropdown").style.display = "block";
+        //         });
+        //         container.addEventListener("mouseleave", () => {
+        //             container.querySelector(".dropdown").style.display = "none";
+        //         });
+        //     });
+        // });
+        document.addEventListener("DOMContentLoaded", function() {
+  // Desktop: Dropdown na hover w <nav>
+  const desktopDropdownContainers = document.querySelectorAll("nav .dropdown-container");
+  desktopDropdownContainers.forEach(container => {
+    container.addEventListener("mouseenter", () => {
+      const dropdown = container.querySelector(".dropdown");
+      if (dropdown) dropdown.style.display = "block";
+    });
+    container.addEventListener("mouseleave", () => {
+      const dropdown = container.querySelector(".dropdown");
+      if (dropdown) dropdown.style.display = "none";
+    });
+  });
+
+  // Mobile: Hamburger button – otwieranie/zamykanie overlay menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navbar = document.getElementById('navbar');
+
+  hamburger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+    navbar.classList.toggle('menu-active');
+    document.body.classList.toggle('no-scroll');
+
+    // Aktualizacja aria-expanded
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  // Mobile: Rozwijanie/zwijanie dropdown w overlay menu dla "ŻŁOBEK"
+  const mobileDropdownHeaders = document.querySelectorAll('#mobileMenu .dropdown-header');
+  mobileDropdownHeaders.forEach(header => {
+    header.addEventListener('click', function(e) {
+      e.preventDefault();
+      const container = header.closest('.dropdown-container');
+      if (container) {
+        container.classList.toggle('active');
+      }
+    });
+  });
+});
+
     </script>
 </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptacja - Żłobek Elefante</title>
+  <link rel="stylesheet" href="/styl.css">
+  <link rel="stylesheet" href="/podstrony_style/adaptacja.css">
+  <!-- Załóżmy, że pozostałe pliki zewnętrzne są takie same – poniżej umieszczam scalony kod z poprawkami responsywnymi -->
+ 
+</head>
+<body>
+  <header>
+    <div class="rekru">
+      <div class="header-left">
+        <span class="re_trwa">Rekrutacja trwa!</span>
+        <span class="tel">📞  Zadzwoń +48 123456789</span>
+        <span class="mail">✉️  biuro@elefante.pl</span>
+      </div>
+      <div class="header-right">
+        <div class="language-selector">
+          <img src="/img/pl.png" alt="PL" onclick="changeLang('pl')">
+          <img src="/img/en.png" alt="EN" onclick="changeLang('en')">
+          <img src="/img/es.png" alt="ES" onclick="changeLang('es')">
+        </div>
+      </div>  
+    </div>
+    <nav id="navbar">
+      <div class="logo">
+        <a href="/index.html"><img src="/img/logo.jpg" alt="Żłobek Elefante"></a>
+      </div>
+      <div class="ham">
+        <button id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+          <span class="hamburger-icon">☰</span>
+        </button>
+      </div>
+      <ul class="menu">
+        <li class="dropdown-container">
+          <a href="#">ŻŁOBEK ▼</a>
+          <ul class="dropdown">
+            <li><a href="/podstrony_html/adaptacja.html">Adaptacja</a></li>
+            <li><a href="plan_dnia.html">Plan dnia</a></li>
+            <li><a href="kadra.html">Kadra</a></li>
+            <li><a href="rekrutacja.html">Rekrutacja</a></li>
+          </ul>
+        </li>
+        <li><a href="oferta.html">OFERTA</a></li>
+        <li><a href="galeria.html">GALERIA</a></li>
+        <li><a href="kontakt.html">KONTAKT</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="dropdown-container">
+        <div class="dropdown-header">
+          <a href="#">ŻŁOBEK</a>
+          <span class="dropdown-toggle">▼</span>
+        </div>
+        <ul class="dropdown">
+          <li><a href="/podstrony_html/adaptacja.html">Adaptacja</a></li>
+          <li><a href="plan_dnia.html">Plan dnia</a></li>
+          <li><a href="kadra.html">Kadra</a></li>
+          <li><a href="rekrutacja.html">Rekrutacja</a></li>
+        </ul>
+      </li>
+      <li><a href="oferta.html">OFERTA</a></li>
+      <li><a href="galeria.html">GALERIA</a></li>
+      <li><a href="kontakt.html">KONTAKT</a></li>
+    </ul>
+  </div>
+  <div class="line"></div>
+  <div class="cut-up"></div>
+  <main>
+    <section class="adaptacja">
+      <div class="title_adaptacja"><h1>Adaptacja</h1></div>  
+      <div class="line_adaptacja"><div class="line_30"></div></div>
+      
+      <div class="cut-up_row_1"></div>
+      <div class="row_1" id="sekcja1">
+        <div class="space"><img src="/img/slonik.png" alt="Słonik"></div>
+        <div class="cloud-box">
+          <p>
+            Zdajemy sobie sprawę, jak ważne, a zarazem trudne mogą być pierwsze dni w żłobku – zarówno dla Dziecka, jak i Rodzica. Dlatego opracowaliśmy tygodniowy plan adaptacyjny, który pomoże naszym podopiecznym i ich bliskim oswoić się z nową sytuacją...
+          </p>
+        </div>
+      </div>
+      <div class="cut-down_row_1"></div>
+      
+      <div class="cut-up_row_2"></div>
+      <div class="row_2" id="sekcja2">
+        <div class="cloud-box">
+          <p>
+            Zdajemy sobie sprawę, jak ważne, a zarazem trudne mogą być pierwsze dni w żłobku – zarówno dla Dziecka, jak i Rodzica. Dlatego opracowaliśmy tygodniowy plan adaptacyjny...
+          </p>
+        </div>
+        <div class="space space-2"><img src="/img/slonik.png" alt="Słonik"></div>
+      </div>
+      <div class="cut-down_row_2"></div>
+      
+      <div class="cut-up_row_3"></div>
+      <div class="row_3" id="sekcja3">
+        <div class="space"><img src="/img/slonik.png" alt="Słonik"></div>
+        <div class="cloud-box">
+          <p>
+            Zdajemy sobie sprawę, jak ważne, a zarazem trudne mogą być pierwsze dni w żłobku – zarówno dla Dziecka, jak i Rodzica. Dlatego opracowaliśmy tygodniowy plan adaptacyjny...
+          </p>
+        </div>
+      </div>
+      <div class="cut-down_row_3"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="first_row">
+      <div class="logo"><img src="/img/logo.jpg" alt="Logo Żłobka Elefante"></div>
+      <div class="contact">
+        <div class="adres">
+          <p>
+            <strong>Adres:</strong><br>
+            31-571 Kraków<br>
+            Stanisława Lema 19
+          </p>
+        </div>
+        <div class="kontakt">
+          <p>
+            <strong>Kontakt:</strong><br>
+            Mail: biuro@dinusiowo.pl<br>
+            Telefon informacja/zapisy: 729 858 998<br>
+            Telefon do placówki: 537 272 572
+          </p>
+        </div>
+      </div>
+      <div class="mapa">
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20483.49410932103!2d19.961793!3d50.078109!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165ae12f3d2e9b%3A0x77cc2077889049cc!2sDukat%C3%B3w%2029%2C%2031-431%20Krak%C3%B3w%2C%20Polska!5e0!3m2!1spl!2sus!4v1716154895574" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="sec_row">
+      <div class="social_media">
+        <a href="https://www.facebook.com/"><img src="/img/fb.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/"><img src="/img/ig.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/"><img src="/img/tt.png" alt="TikTok"></a>
+      </div>
+    </div>
+    <div class="underline"></div>
+    <div class="third_row">
+      <p>&copy; 2025 Żłobek Elefante. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Desktop: Wyświetlanie dropdown menu przy hover
+      const desktopDropdownContainers = document.querySelectorAll("nav .dropdown-container");
+      desktopDropdownContainers.forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const dropdown = container.querySelector(".dropdown");
+          if (dropdown) dropdown.style.display = "block";
+        });
+        container.addEventListener("mouseleave", () => {
+          const dropdown = container.querySelector(".dropdown");
+          if (dropdown) dropdown.style.display = "none";
+        });
+      });
+      
+      // Mobile: Obsługa przycisku hamburgera
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const navbar = document.getElementById('navbar');
+      hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        navbar.classList.toggle('menu-active');
+        document.body.classList.toggle('no-scroll');
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+      });
+      
+      // Mobile: Rozwijanie dropdown w menu overlay
+      const mobileDropdownHeaders = document.querySelectorAll('#mobileMenu .dropdown-header');
+      mobileDropdownHeaders.forEach(header => {
+        header.addEventListener('click', function(e) {
+          e.preventDefault();
+          const container = header.closest('.dropdown-container');
+          if (container) { container.classList.toggle('active'); }
+        });
+      });
+      
+      // Automatyczne scrollowanie między sekcjami (desktop)
+      const sections = document.querySelectorAll('[id^="sekcja"]');
+      if (sections.length) {
+        let currentSection = 0;
+        let isScrolling = false;
+        const scrollToSection = (index) => {
+          if (index < 0 || index >= sections.length) return;
+          isScrolling = true;
+          sections[index].scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isScrolling = false; }, 1000);
+        };
+        window.addEventListener('wheel', (e) => {
+          if (isScrolling) { e.preventDefault(); return; }
+          if (e.deltaY > 0 && currentSection < sections.length - 1) {
+            e.preventDefault();
+            currentSection++;
+            scrollToSection(currentSection);
+          } else if (e.deltaY < 0 && currentSection > 0) {
+            e.preventDefault();
+            currentSection--;
+            scrollToSection(currentSection);
+          }
+        }, { passive: false });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,617 +1,604 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* Resetowanie domyślnych styli */
+/* Reset i podstawowe style */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', Arial, sans-serif; /* Nowoczesny i czytelny font */
-    font-size: 16px; /* Bazowy rozmiar tekstu */
-    line-height: 1.6; /* Wysokość linii dla lepszej czytelności */
-    letter-spacing: 0.5px; /* Minimalny odstęp między literami */
-    word-spacing: 1px; /* Lekki odstęp między słowami */
-    color: #333; /* Stonowany kolor tekstu */
-    background-color: #f9f9f9; /* Delikatne tło dla kontrastu */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
+/* Pasek górny (rekru) */
 .rekru {
-    height: 80px;
-    background-color: #4aa3df; /* Jasny niebieski */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 80px;
+  background-color: #4aa3df;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .header-left {
-    width: 70%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    color: #333;
-    margin-left: 100px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: #333;
+  margin-left: 100px;
 }
-
 .header-right {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    margin-right: 140px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 140px;
 }
-
 .language-selector img {
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-    margin: 10px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  margin: 10px;
 }
-.language-selector span {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-}
-
-.header-left span{
-    margin-left: 140px;
-    text-wrap: nowrap;
+.header-left span {
+  margin-left: 140px;
+  white-space: nowrap;
 }
 
 /* Nawigacja */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+.logo {
+  width: 240px;
+  height: 200px;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.logo{
-    width: 240px;
-    height: 200px;
-}
-
-.logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Dopasowuje obraz, zachowując proporcje */
-}
-
+/* Desktopowe menu */
 .menu {
-    list-style-type: none;
-    text-decoration: none;
-    display: flex;
-    margin-top: 140px;
-    margin-right: 60px;
-    gap: 20px;
+  list-style-type: none;
+  display: flex;
+  margin-top: 140px;
+  margin-right: 60px;
+  gap: 20px;
 }
-
 .menu li {
-    margin-right: 140px;
-    position: relative;
+  margin-right: 140px;
+  position: relative;
 }
-
 .menu a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  transition: color 0.3s;
 }
-
 .menu a:hover {
-    color: #ffdd57;
+  color: #ffdd57;
 }
 
-.dropdown {
-    display: none;
-    position: absolute;
-    background: #4aa3df;
-    padding: 10px;
-    border-radius: 8px;
-    top: 100%;
-    left: 0;
-    min-width: 200px;
+/* Dropdown (desktop) */
+nav .dropdown {
+  display: none;
+  position: absolute;
+  background: #4aa3df;
+  padding: 10px;
+  border-radius: 8px;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+}
+nav .dropdown li {
+  padding: 10px;
+  text-align: left;
+}
+nav .dropdown li a {
+  color: white;
+  display: block;
 }
 
-.dropdown li {
-    padding: 10px;
-    text-align: left;
+/* Linie i kształty dekoracyjne */
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #4aa3df;
+  margin: 6px 0;
 }
-
-.dropdown li a {
-    color: white;
-    display: block;
-    width: 100%;
+.cut-up {
+  height: 100px;
+  position: relative;
+  top: 80px;
+  background-color: #ffffff;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 20%);
+  z-index: 100;
 }
-
-.menu li:hover .dropdown {
-    display: block;
-}
-
-/* Animacje */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-in-out forwards;
-}
-
-.slide-in {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1s ease-in-out forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.line{
-    width: 100%;
-    height: 3px;
-    background-color: #4aa3df;
-    margin: 6px 0;
-}
-
-.cut-up{
-    height: 100px;
-    position: relative;
-    top: 80px;
-    background-color: #ffffff; /* Kolor tła */
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 20%);
-    z-index: 100;
-}
-
-.cut-down{
-    height: 100px;
-    position: relative;
-    background-color: #ffffff; /* Kolor tła */
-    clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
-    z-index: 100;
+.cut-down {
+  height: 100px;
+  position: relative;
+  background-color: #ffffff;
+  clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+  z-index: 100;
 }
 
 /* Sekcja główna */
 .sec_1 {
-    width: 100%;
-    height: auto;
-    background-color: #8fc2e4;
+  width: 100%;
+  background-color: #8fc2e4;
+}
+.img_witamy img {
+  margin-left: 120px;
+  margin-top: 40px;
+}
+.sec_2 {
+  display: flex;
+  justify-content: right;
+}
+.box_img {
+  width: 50%;
+  height: 75%;
+}
+.box_img img {
+  width: 400px;
+  height: 400px;
+  margin-left: 340px;
+}
+.box_text {
+  height: 60%;
+  width: 50%;
+  text-align: justify;
+  margin: auto;
+  padding: 0 50px;
+}
+.box_text p {
+  font-size: 18px;
 }
 
-.img_witamy img{
-    margin-left: 120px;
-    margin-top: 40px; 
+/* Sekcje .info, .opiekunki, .aplikacja, .oferta_edukacyjna */
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: white;
 }
-
-.sec_2{
-    display: flex;
-    justify-content: right;
+.opiekunki {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
-
-.box_img{
-    width: 50%;
-    height: 75%;
+.box_img_opiek {
+  width: 40%;
+  margin: 20px;
 }
-
-.box_img img{
-    width: 400px;
-    height: 400px;
-    margin-left: 340px;
+.box_img_opiek img {
+  width: 100%;
+  height: 100%;
 }
-
-.box_text{
-    height: 60%;
-    width: 50%;
-    text-align: justify;
-    margin: auto;
-    padding: 0 50px;
-}
-
-.box_text p{
-    font-size: 18px;
-}
-
-.info{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: white;
-}
-
-.opiekunki{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 40px;
-}
-
-.box_img_opiek{
-    width: 40%;
-    height: 100%;
-    margin: 20px;
-}
-
-.box_img_opiek img{
-    width: 100%;
-    height: 100%;
-}
-
-.text_opiekunki{
-    width: 100%;
-    height: 350px;
-}
-
-.text_opiekunki img{
-    width: 90%;
-    height: 60%;
-}
-
-.text_opiekunki h1{
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 20px 0 0 0;
-}
-
 .text_opiekunki {
-    text-align: center;
-    padding: 10px 350px 50px 350px;
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  padding: 10px 350px 50px 350px;
 }
-
-.text p{
-    margin: 3px;
-    text-align: justify;
+.text_opiekunki h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px 0 0 0;
 }
-
-.aplikacja{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 40px;
+.aplikacja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
-
-.text_aplikacja{
-    text-align: center;
-    padding: 10px 150px 50px 150px;
-    width: 60%;
+.text_aplikacja {
+  text-align: center;
+  padding: 10px 150px 50px 150px;
+  width: 60%;
 }
-
-.text_aplikacja h1{
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 20px 0 0 0;
+.text_aplikacja h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px 0 0 0;
 }
-
-.box_img_aplik{
-    width: 40%;
-    height: 100%;
-    margin: 20px;
+.box_img_aplik {
+  width: 40%;
+  margin: 20px;
 }
-
-.box_img_aplik img{
-    width: 100%;
-    height: 100%;
-    padding-right: 250px;
+.box_img_aplik img {
+  width: 100%;
+  height: 100%;
+  padding-right: 250px;
 }
-
-.oferta_edukacyjna{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 40px;
+.oferta_edukacyjna {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
-
-.box_img_oferta{
-    width: 40%;
-    height: 100%;
-    margin: 20px;
+.box_img_oferta {
+  width: 40%;
+  margin: 20px;
 }
-
-.box_img_oferta img{
-    width: 100%;
-    height: 100%;
-    padding-left: 150px;
+.box_img_oferta img {
+  width: 100%;
+  height: 100%;
+  padding-left: 150px;
 }
-
-.text_oferta{
-    text-align: center;
-    padding: 10px 150px 50px 150px;
-    width: 60%;
+.text_oferta {
+  text-align: center;
+  padding: 10px 150px 50px 150px;
+  width: 60%;
 }
-
-.text_oferta h1{
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 20px 0 0 0;
+.text_oferta h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px 0 0 0;
 }
-
-.text p{
-    margin: 3px;
-    text-align: justify;
-}
-
-.cut-donw_2{
-    height: 100px;
-    position: relative;
-    background-color: #8fc2e4; /* Kolor tła */
-    clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
-    z-index: 100;
-    width: 100%;
+.cut-donw_2 {
+  height: 100px;
+  position: relative;
+  background-color: #8fc2e4;
+  clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+  z-index: 100;
+  width: 100%;
 }
 
 /* Stopka */
 footer {
-    background: #8fc2e4;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    position: relative;
-    height: auto;
-    padding-top: 80px;
+  background: #8fc2e4;
+  color: #000;
+  text-align: center;
+  position: relative;
+  padding-top: 80px;
+}
+.first_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+footer .logo {
+  width: 360px;
+  height: 280px;
+}
+footer .logo img {
+  padding: 10px;
+}
+.mapa {
+  width: 360px;
+  height: 280px;
+}
+.contact {
+  padding: 20px;
+}
+.contact p {
+  margin: 18px 0 27px 0;
+}
+.social_media {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.social_media img {
+  height: 70px;
+  width: auto;
+  margin: 10px;
+  padding: 10px;
+}
+.third_row p {
+  padding: 20px;
+}
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin: 6px 0;
 }
 
-.first_row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-footer .logo{
-    width: 360px;
-    height: 280px;
-}
-
-footer .logo img{
-    padding: 10px;
-}
-
-.mapa{
-    width: 360px;
-    height: 280px;
-}
-
-.contact{
-    padding: 20px;
-}
-
-.contact p{
-    margin: 18px 0 27px 0;
-}
-
-.social_media{
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.social_media img{
-    height: 70px;
-    width: auto;
-    margin: 10px;
-    padding: 10px;
-}
-
-.third_row{
-}
-
-.third_row p{
-    padding: 20px;
-}
-
-.underline{
-    width: 100%;
-    height: 2px;
-    background-color: #000000;
-    margin: 6px 0;
-}
-
-/* Chmurki na sekcje */
-.cloud-box {
-    background: #d4ebf2;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
-}
-
-.cloud-box h2 {
-    color: #4aa3df;
-}
-
-.cloud-box ul {
-    list-style: none;
-    padding: 10px;
-}
-
-.cloud-box ul li {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-/* Media Queries dla responsywności */
-
-/* Dla ekranów poniżej 992px */
+/* Media Queries */
 @media (max-width: 992px) {
-    .header-left {
-        margin-left: 20px;
-    }
-    .header-left span {
-        margin-left: 10px;
-    }
-    .header-right {
-        margin-right: 20px;
-    }
-    nav {
-        padding: 15px 2%;
-    }
-    .menu {
-        margin-top: 20px;
-        margin-right: 20px;
-        gap: 10px;
-    }
-    .menu li {
-        margin-right: 10px;
-    }
-    .logo {
-        width: 180px;
-        height: 150px;
-    }
+  .header-left {
+    margin-left: 20px;
+  }
+  .header-left span {
+    margin-left: 10px;
+  }
+  .header-right {
+    margin-right: 20px;
+  }
+  nav {
+    padding: 15px 2%;
+  }
+  .menu {
+    margin-top: 20px;
+    margin-right: 20px;
+    gap: 10px;
+  }
+  .menu li {
+    margin-right: 10px;
+  }
+  .logo {
+    width: 180px;
+    height: 150px;
+  }
 }
 
-/* Dla ekranów poniżej 768px */
 @media (max-width: 768px) {
-    .img_witamy img {
-        margin-left: 20px;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
-    .sec_2 {
-        flex-direction: column;
-        align-items: center;
-    }
-    .box_img, .box_text {
-        width: 90%;
-        margin: 10px 0;
-    }
-    .box_img img {
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-    }
-    .box_text {
-        padding: 0 20px;
-    }
-    .opiekunki {
-        flex-direction: column;
-        text-align: center;
-    }
-    .text_opiekunki {
-        padding: 10px 20px 20px 20px;
-        width: 100%;
-    }
-    .box_img_opiek {
-        width: 80%;
-        margin: 10px auto;
-    }
-    .aplikacja {
-        flex-direction: column;
-        text-align: center;
-    }
-    .text_aplikacja {
-        padding: 10px 20px;
-        width: 100%;
-    }
-    .box_img_aplik {
-        width: 80%;
-        margin: 10px auto;
-        padding-right: 0;
-    }
-    .box_img_aplik img {
-        padding-right: 0;
-    }
-    .oferta_edukacyjna {
-        flex-direction: column;
-        text-align: center;
-    }
-    .text_oferta {
-        padding: 10px 20px;
-        width: 100%;
-    }
-    .box_img_oferta {
-        width: 80%;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-    .box_img_oferta img {
-        padding-left: 0;
-    }
-    footer .first_row {
-        flex-direction: column;
-    }
-    footer .logo, .mapa {
-        width: 80%;
-        height: auto;
-        margin: 10px auto;
-    }
-    .contact {
-        padding: 10px;
-        text-align: center;
-    }
-    .social_media img {
-        height: 50px;
-    }
+  .img_witamy img {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .sec_2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box_img,
+  .box_text {
+    width: 90%;
+    margin: 10px 0;
+  }
+  .box_img img {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+  .box_text {
+    padding: 0 20px;
+  }
+  .opiekunki {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text_opiekunki {
+    padding: 10px 20px 20px 20px;
+    width: 100%;
+  }
+  .box_img_opiek {
+    width: 80%;
+    margin: 10px auto;
+  }
+  .aplikacja {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text_aplikacja {
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .box_img_aplik {
+    width: 80%;
+    margin: 10px auto;
+    padding-right: 0;
+  }
+  .box_img_aplik img {
+    padding-right: 0;
+  }
+  .oferta_edukacyjna {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text_oferta {
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .box_img_oferta {
+    width: 80%;
+    margin: 10px auto;
+    padding-left: 0;
+  }
+  .box_img_oferta img {
+    padding-left: 0;
+  }
+  footer .first_row {
+    flex-direction: column;
+  }
+  footer .logo,
+  .mapa {
+    width: 80%;
+    height: auto;
+    margin: 10px auto;
+  }
+  .contact {
+    padding: 10px;
+    text-align: center;
+  }
+  .social_media img {
+    height: 50px;
+  }
 }
 
-/* Dla ekranów poniżej 480px */
 @media (max-width: 480px) {
-    .header-left {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 10px;
-    }
-    .header-right {
-        margin-right: 10px;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .menu {
-        flex-direction: column;
-        margin-top: 10px;
-        margin-right: 0;
-    }
-    .menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .logo {
-        width: 150px;
-        height: auto;
-    }
-    .box_text {
-        padding: 0 10px;
-    }
-    .text_opiekunki {
-        padding: 10px 10px 20px 10px;
-    }
-    .text_aplikacja, .text_oferta {
-        padding: 10px 10px;
-    }
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
+  .header-right {
+    margin-right: 10px;
+  }
+  nav {
+    align-items: center;
+  }
+  .menu {
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .logo {
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+    width: 150px;
+    height: auto;
+  }
+  .box_text {
+    padding: 0 10px;
+  }
+  .text_opiekunki {
+    padding: 10px 10px 20px 10px;
+  }
+  .text_aplikacja,
+  .text_oferta {
+    padding: 10px 10px;
+  }
+}
+
+/* Hamburger + Overlay menu */
+#hamburger {
+  background: none;
+  border: none;
+  display: none; /* Pokażemy go tylko w media query */
+  cursor: pointer;
+}
+.hamburger-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  margin-left: -15px;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+.hamburger-icon::before {
+  top: -10px;
+}
+.hamburger-icon::after {
+  top: 10px;
+}
+
+/* Overlay menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+.mobile-menu.active {
+  display: block;
+  opacity: 1;
+}
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 80px 20px 20px;
+  text-align: center;
+}
+.mobile-menu-list a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+}
+.mobile-menu-list a:hover {
+  color: #ffdd57;
+}
+
+/* Blokada scrollowania tła */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Ukrywanie desktop menu na małych ekranach */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+  }
+  nav {
+    position: static !important;
+  }
+  header {
+    position: static !important;
+  }
+}
+
+/* Ukrycie logo, gdy menu aktywne */
+#navbar.menu-active .logo,
+#navbar.menu-active .logo img {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+/* Pozycja hamburgera, gdy menu aktywne */
+nav.menu-active #hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+}
+
+/* Mobilny dropdown w overlay */
+#mobileMenu .dropdown {
+  display: none;
+}
+#mobileMenu .dropdown-container.active .dropdown {
+  display: block;
+}
+.dropdown-header {
+  cursor: pointer;
+  background: #ffffff;
+  list-style: none;
+}
+.dropdown-toggle {
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.dropdown{
+    list-style: none ;
+}
+
+ul {
+    list-style: none;
 }
